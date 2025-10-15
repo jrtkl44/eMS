@@ -1,0 +1,233 @@
+/* Base styles (from previous code) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3f);
+    color: #f0f0f0;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(30, 30, 50, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Form styling */
+form {
+    background-color: rgba(40, 40, 60, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.form-group {
+    flex: 1 1 200px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a3f;
+    color: #f0f0f0;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    background-color: #3a3a5f;
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+/* Button styling */
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0057ff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #006dff;
+    transform: translateY(-2px);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+thead {
+    background-color: rgba(50, 50, 70, 0.9);
+}
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #f0f0f0;
+    border-bottom: 2px solid #444;
+}
+tbody tr:nth-child(even) {
+    background-color: rgba(40, 40, 60, 0.6);
+}
+tbody tr:nth-child(odd) {
+    background-color: rgba(30, 30, 50, 0.6);
+}
+tbody td {
+    padding: 12px 15px;
+    color: #ddd;
+}
+tbody td.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Action buttons inside table */
+a.btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+a.btn-warning {
+    background-color: #f0ad4e;
+    color: #222;
+}
+a.btn-warning:hover {
+    background-color: #ec971f;
+}
+a.btn-danger {
+    background-color: #d9534f;
+    color: #fff;
+}
+a.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+/* Responsive styles for Desktop & Tablet */
+@media (max-width: 992px) {
+    /* Keep full width, adjust form layout if needed */
+    .form-row {
+        flex-direction: column;
+    }
+    .form-group {
+        flex: 1 1 100%;
+    }
+    /* Make table headers sticky for better UX on small screens */
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+/* Mobile styles - eyecatchy & compact */
+@media (max-width: 576px) {
+    body {
+        background: linear-gradient(135deg, #ff6f61, #ffcc70); /* Vibrant gradient for eye-catching mobile */
+    }
+    h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        text-align: center;
+    }
+    .container {
+        margin: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+    }
+    /* Make form inputs larger and more prominent */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 14px;
+        font-size: 1.2em;
+        border-radius: 12px;
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #ddd;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus {
+        border-color: #0057ff;
+        box-shadow: 0 0 10px rgba(0, 87, 255, 0.5);
+        outline: none;
+    }
+    /* Buttons - make them larger and more prominent */
+    button {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.3em;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+    /* Table styling for mobile - simplified, large text, vibrant colors */
+    table {
+        font-size: 1.1em;
+    }
+    thead {
+        background-color: #ff6f61;
+        color: #fff;
+    }
+    tbody tr {
+        margin-bottom: 10px;
+    }
+    tbody td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    /* Action buttons in mobile view */
+    a.btn {
+        padding: 12px 20px;
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+}
